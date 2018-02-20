@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/SebastianBar/ExpressAPI-Demo#readme",
   "dependencies": {
+    "@okta/jwt-verifier": "0.0.11",
+    "axios": "^0.18.0",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "sequelize": "^4.33.4"

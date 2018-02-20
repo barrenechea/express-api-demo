@@ -1,19 +1,16 @@
-let   SECRET
-let   SECRET_ENCRYPT
+let   OKTA_URL
 let   API_PORT
 const env = process.env.NODE_ENV || 'development'
 
 switch (env) {
   case 'production':
-    SECRET = process.env.SECRET
-    SECRET_ENCRYPT = process.env.SECRET_ENCRYPT
+    OKTA_URL = process.env.OKTA_URL
 
     API_PORT = process.env.API_PORT
     break
 
   case 'development':
-    SECRET = 'ultrasecretkey'
-    SECRET_ENCRYPT = 'blahh'
+    OKTA_URL = 'https://dev-638725.oktapreview.com'
 
     API_PORT = '3000'
     break
@@ -22,7 +19,6 @@ switch (env) {
 }
 
 module.exports = {
-  secret: SECRET,
-  secretEncrypt:SECRET_ENCRYPT,
+  oktaUrl: OKTA_URL,
   apiPort:API_PORT
 }
