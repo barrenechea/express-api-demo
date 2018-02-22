@@ -13,7 +13,8 @@ const Movie = sequelize.define('movie', {
   },
   // Watch counter
   watchCounter: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    defaultValue: 0
   },
   // Defines if this movie is restricted to the assigned country
   countryOnly: {
