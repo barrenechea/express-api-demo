@@ -30,7 +30,7 @@ function PUT (req, res) {
     entity.updateAttributes({
       sub:            (typeof req.body.sub === 'undefined') ? entity.sub : req.body.sub,
       displayName:    (typeof req.body.displayName === 'undefined') ? entity.displayName : req.body.displayName,
-      userId:         (typeof req.body.userId === 'undefined') ? entity.userId : req.body.displayName,
+      userId:         (typeof req.body.userId === 'undefined') ? entity.userId : req.body.userId,
       countryId:      (typeof req.body.countryId === 'undefined') ? entity.countryId : req.body.countryId
     }).then(() => {
       res.json({error: false, data: entity})
