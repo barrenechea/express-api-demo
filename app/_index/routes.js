@@ -33,12 +33,14 @@ app.all( '/migrate', (req, res) => {
           Movie.create({
             name: 'United States Movie only',
             url: 'http://dummymovie.test/us/1.mp4',
+            watchCounter: 0,
             countryOnly: true,
             countryId: 1
           }).then(() => {
             Movie.create({
               name: 'Chilean Movie (All countries)',
               url: 'http://dummymovie.test/us/1.mp4',
+              watchCounter: 0,
               countryOnly: false,
               countryId: 2
             })

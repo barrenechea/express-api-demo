@@ -17,6 +17,7 @@ function POST (req, res) {
   Model.create({
     name: req.body.name,
     url: req.body.url,
+    watchCounter: req.body.watchCounter,
     countryOnly: req.body.countryOnly,
     countryId: req.body.countryId
   })
@@ -28,8 +29,9 @@ function POST (req, res) {
 function PUT (req, res) {
   Model.findById(req.params.id).then(entity => {
     entity.updateAttributes({
-      name:            (typeof req.body.name === 'undefined') ? entity.name : req.body.name,
+      name:           (typeof req.body.name === 'undefined') ? entity.name : req.body.name,
       url:            (typeof req.body.url === 'undefined') ? entity.url : req.body.url,
+      watchCounter:   (typeof req.body.watchCounter === 'undefined') ? entity.watchCounter : req.body.watchCounter,
       countryOnly:    (typeof req.body.countryOnly === 'undefined') ? entity.countryOnly : req.body.countryOnly,
       countryId:      (typeof req.body.countryId === 'undefined') ? entity.countryId : req.body.countryId
     }).then(() => {

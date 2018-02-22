@@ -11,6 +11,10 @@ const Movie = sequelize.define('movie', {
   url: {
     type: Sequelize.STRING
   },
+  // Watch counter
+  watchCounter: {
+    type: Sequelize.INTEGER
+  },
   // Defines if this movie is restricted to the assigned country
   countryOnly: {
     type: Sequelize.BOOLEAN
