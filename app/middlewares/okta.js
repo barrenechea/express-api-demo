@@ -1,5 +1,6 @@
 import OktaJwtVerifier from '@okta/jwt-verifier'
 import config from '../../config'
+import User from '../models/user/model'
 
 const oktaJwtVerifier = new OktaJwtVerifier({
   issuer: `${config.oktaUrl}/oauth2/default`,
@@ -19,7 +20,11 @@ function authenticationRequired (req, res, next) {
   return oktaJwtVerifier.verifyAccessToken(match[1])
     .then(jwt => {
       req.jwt = jwt
-      next()
+      User.findOrCreate({where: {sub: jwt.claims.sub}, include: [ { all: true } ], defaults: {displayName: jwt.claims.firstName, countryId: 2}})
+        .then(user => {
+          req.user = user[0].toJSON()
+          next()
+        })
     })
     .catch(err => {
       res.status(401).send(err.message)

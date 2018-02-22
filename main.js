@@ -2,6 +2,7 @@
 // =============================================================================
 import express from 'express'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 import config from './config'
 import okta from './app/middlewares/okta'
 
@@ -17,11 +18,12 @@ import privateRoutes from './app/routes.private'
 // Middlewares
 // =============================================================================
 app.use(cors())
+app.use(bodyParser.json())
 
 // Inject routes - Public and Private
 // =============================================================================
 publicRoutes.map (p => app.use('/', p) )
-privateRoutes.map(p => app.use('/private', okta, p) ) // ToDo middleware implementation
+privateRoutes.map(p => app.use('/private', okta, p) )
 
 // Run the app
 // =============================================================================

@@ -1,22 +1,20 @@
 import Sequelize from 'sequelize'
 import sequelize from '../../sequelize'
+import Country from '../countries/model'
 
 const User = sequelize.define('user', {
-  firstName: {
-    type: Sequelize.STRING
+  // email, obtained from Okta API
+  sub: {
+    type: Sequelize.STRING,
+    allowNull: true
   },
-  lastName: {
+  // Display name
+  displayName: {
     type: Sequelize.STRING
   }
 })
-  
-// force: true will drop the table if it already exists
-User.sync({force: true}).then(() => {
-  // Table created
-  return User.create({
-    firstName: 'John',
-    lastName: 'Doe'
-  })
-})
+
+User.hasMany(User, {as: 'Users'})
+User.belongsTo(Country)
 
 export default User
