@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Node.js API using Express and Okta auth",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "start": "nodemon index.js",
-    "eslint": "eslint --ext .js ./"
+    "lint": "eslint --ext .js ."
   },
   "repository": {
     "type": "git",
@@ -18,21 +23,18 @@
   },
   "homepage": "https://github.com/SebastianBar/ExpressAPI-Demo#readme",
   "dependencies": {
-    "@okta/jwt-verifier": "0.0.11",
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.2",
-    "sequelize": "^4.33.4",
-    "sqlite3": "^3.1.13"
+    "@okta/jwt-verifier": "2.3.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "sequelize": "^6.21.1",
+    "sqlite3": "^5.0.8"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "eslint": "^4.18.0",
-    "nodemon": "^1.15.1"
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.18"
   }
 }
