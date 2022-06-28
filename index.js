@@ -2,7 +2,6 @@
 // =============================================================================
 import express from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
 import config from './config.js';
 import okta from './app/middlewares/okta.js';
 
@@ -18,7 +17,7 @@ const app = express();
 // Middlewares
 // =============================================================================
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Inject routes - Public and Private
 // =============================================================================
