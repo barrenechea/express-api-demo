@@ -1,8 +1,9 @@
-import controller from './controller'
-import express from 'express'
-const app = express.Router()
+import express from 'express';
+import { GET } from './controller.js';
+
+const app = express.Router();
 
 app.route('/whoami')
-  .get    ((req,res) => controller.GET(req, res))
+  .get(GET);
 
-export default app
+export default app;

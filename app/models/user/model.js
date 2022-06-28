@@ -1,20 +1,20 @@
-import Sequelize from 'sequelize'
-import sequelize from '../../sequelize'
-import Country from '../countries/model'
+import Sequelize from 'sequelize';
+import sequelize from '../../sequelize.js';
+import Country from '../countries/model.js';
 
 const User = sequelize.define('user', {
   // email, obtained from Okta API
   sub: {
     type: Sequelize.STRING,
-    allowNull: true
+    allowNull: true,
   },
   // Display name
   displayName: {
-    type: Sequelize.STRING
-  }
-})
+    type: Sequelize.STRING,
+  },
+});
 
-User.hasMany(User, {as: 'Users'})
-User.belongsTo(Country)
+User.hasMany(User, { as: 'Users' });
+User.belongsTo(Country);
 
-export default User
+export default User;

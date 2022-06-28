@@ -1,11 +1,14 @@
-import controller from './controller'
-import express from 'express'
-const app = express.Router()
+import express from 'express';
+import {
+  GET, POST, PUT, DELETE,
+} from './controller.js';
+
+const app = express.Router();
 
 app.route('/countries/:id([0-9]+)?')
-  .get    ((req,res) => controller.GET(req, res))
-  .post   ((req,res) => controller.POST(req, res))
-  .put    ((req,res) => controller.PUT(req, res))
-  .delete ((req,res) => controller.DELETE(req, res))
+  .get(GET)
+  .post(POST)
+  .put(PUT)
+  .delete(DELETE);
 
-export default app
+export default app;

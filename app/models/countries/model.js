@@ -1,11 +1,11 @@
-import Sequelize from 'sequelize'
-import sequelize from '../../sequelize'
+import Sequelize from 'sequelize';
+import sequelize from '../../sequelize.js';
 
 const Country = sequelize.define('country', {
   // Country name
   name: {
-    type: Sequelize.STRING
-  }
-})
+    type: Sequelize.STRING,
+  },
+});
 
-export default Country
+export default Country;

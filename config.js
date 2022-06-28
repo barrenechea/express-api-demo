@@ -1,24 +1,24 @@
-let   OKTA_URL
-let   API_PORT
-const env = process.env.NODE_ENV || 'development'
+let OKTA_URL;
+let API_PORT;
+const env = process.env.NODE_ENV || 'development';
 
 switch (env) {
   case 'production':
-    OKTA_URL = process.env.OKTA_URL
+    OKTA_URL = process.env.OKTA_URL;
 
-    API_PORT = process.env.API_PORT
-    break
+    API_PORT = process.env.API_PORT;
+    break;
 
   case 'development':
-    OKTA_URL = 'https://dev-638725.oktapreview.com'
+    OKTA_URL = 'https://dev-638725.oktapreview.com';
 
-    API_PORT = '3000'
-    break
+    API_PORT = '3000';
+    break;
   default:
-    break
+    break;
 }
 
-module.exports = {
+export default {
   oktaUrl: OKTA_URL,
-  apiPort:API_PORT
-}
+  apiPort: API_PORT,
+};

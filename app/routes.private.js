@@ -1,13 +1,13 @@
-import index from './_index/routes'
-import whoami from './custom/whoami/private.routes'
-import watch from './custom/watch/private.routes'
+import index from './_index/routes.js';
+import whoami from './custom/whoami/private.routes.js';
+import watch from './custom/watch/private.routes.js';
 /*
 * All private routes
 */
 const routes = [
   index,
   whoami,
-  watch
-]
+  watch,
+];
 
-export default routes
+export default routes;
