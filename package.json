@@ -23,16 +23,16 @@
   },
   "homepage": "https://github.com/SebastianBar/ExpressAPI-Demo#readme",
   "dependencies": {
-    "@okta/jwt-verifier": "2.3.0",
+    "@okta/jwt-verifier": "2.6.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "sequelize": "^6.21.1",
-    "sqlite3": "^5.0.8"
+    "sequelize": "^6.21.3",
+    "sqlite3": "^5.0.10"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
+    "eslint": "^8.20.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.19"
   }
 }
