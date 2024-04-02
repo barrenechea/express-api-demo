@@ -1,24 +1,17 @@
-let OKTA_URL;
-let API_PORT;
-const env = process.env.NODE_ENV || 'development';
+const { NODE_ENV, OKTA_URL, API_PORT } = process.env;
+const env = NODE_ENV ?? 'development';
 
-switch (env) {
-  case 'production':
-    OKTA_URL = process.env.OKTA_URL;
-
-    API_PORT = process.env.API_PORT;
-    break;
-
-  case 'development':
-    OKTA_URL = 'https://dev-638725.oktapreview.com';
-
-    API_PORT = '3000';
-    break;
-  default:
-    break;
-}
-
-export default {
-  oktaUrl: OKTA_URL,
-  apiPort: API_PORT,
+const configMap = {
+  production: {
+    oktaUrl: OKTA_URL,
+    apiPort: API_PORT,
+  },
+  development: {
+    oktaUrl: 'https://dev-638725.oktapreview.com',
+    apiPort: '3000',
+  },
 };
+
+const config = configMap[env] ?? configMap.development;
+
+export default config;
