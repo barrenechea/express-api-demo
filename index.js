@@ -21,8 +21,8 @@ app.use(express.json());
 
 // Inject routes - Public and Private
 // =============================================================================
-publicRoutes.map((p) => app.use('/', p));
-privateRoutes.map((p) => app.use('/private', okta, p));
+publicRoutes.forEach((p) => app.use('/', p));
+privateRoutes.forEach((p) => app.use('/private', okta, p));
 
 // Run the app
 // =============================================================================

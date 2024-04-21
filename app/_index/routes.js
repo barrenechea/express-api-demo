@@ -6,7 +6,8 @@ import Movie from '../models/movies/model.js';
 const app = express.Router();
 
 app.all('/', (req, res) => {
-  res.json({ error: false, data: { message: `Hello${req.jwt ? `, ${req.jwt.claims.sub}` : ' from the API!'}` } });
+  const greeting = req.jwt ? `, ${req.jwt.claims.sub}` : ' from the API!';
+  res.json({ error: false, data: { message: `Hello${greeting}` } });
 });
 
 // Route to run migrations over configured database

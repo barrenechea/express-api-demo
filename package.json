@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/barrenechea/ExpressAPI-Demo#readme",
   "dependencies": {
-    "@okta/jwt-verifier": "3.0.1",
+    "@okta/jwt-verifier": "3.1.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "sequelize": "^6.37.2",
+    "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
